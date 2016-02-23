@@ -5,3 +5,9 @@
 - The game is a 10x10 table with 10 mines, although it would be possible to change that very easily
 
 The main function is in testProgram.c file
+
+The file works both in windows and linux:
+- In windows use visual Studio
+- in Linux-like os use `make` to compile, then run the file using `./mines`
+
+There are binaries available!

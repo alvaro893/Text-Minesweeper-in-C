@@ -36,14 +36,22 @@ int main(void){
 	initialize_table();
 	
 	while(table.nMines != 0){				// when nMines becomes 0 you will win the game
-	
+#ifdef _WIN32
 		system("cls");
+#else
+		system("clear");
+#endif
 		print_table();
 		count_time(&fin, init);				// every time which count_time is called passed time is updated
 		printf("cell values: 'X' unknown, '0' no mines close, '1-8' number of near mines, 'F' flag in cell\n");
 		printf("push t (see Time), f (put/remove Flag in cell), c (Check cell), n (New game), e (Exit game): ");
-
+#ifdef _WIN32
 		ch = getche(); putchar('\n');
+#endif
+
+#ifdef linux
+		ch = getchar(); putchar(ch); putchar('\n');
+#endif
 
 		switch (ch){
 		case 't':							// just update the time in the next loop
